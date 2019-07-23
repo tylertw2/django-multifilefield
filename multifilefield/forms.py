@@ -92,7 +92,7 @@ class ClearableMultiFileInput(MultiFileInput):
                         substitutions['clear_checkbox_id'] = conditional_escape(checkbox_id)
                         substitutions['clear'] = CheckboxInput().render(checkbox_name, False, attrs={'id': checkbox_id},renderer=None)
                         substitutions['clear_template'] = self.template_with_clear % substitutions
-                init_template += (template % substitutions)
+                    init_template += (template % substitutions)
             init_template += '<input type="hidden" value="%s" name="total_files">' % len(value)
         return mark_safe(init_template + (input_template % substitutions))
 
